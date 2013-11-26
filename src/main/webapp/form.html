@@ -1,0 +1,27 @@
+<html>
+	<head th:substituteby="fragments :: headTag">
+	</head>
+	<body>
+		 <div th:include="fragments :: fixed-navbar"></div>
+
+		<div class="container">
+			
+			<form action="#" th:action="@{/}" th:object="${person}" method="post">
+				<table>
+					<tr>
+						<td>How old are you?</td>
+						<td><input type="text" th:field="*{age}" /></td>
+						<td><div id="errors" th:text="${error}" /></td>
+					</tr>
+					<tr>
+						<td><button type="btn submit">Submit</button></td>
+					</tr>
+				</table>
+			</form>
+
+		</div>
+
+    <div th:include="fragments :: footer-section"></div>
+
+	</body>
+</html>
